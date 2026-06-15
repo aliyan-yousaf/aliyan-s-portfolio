@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Aliyan Yousaf — Contact. Let's work together." />
+  <title>Contact — Aliyan Yousaf</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+
+  <!-- Contact CSS -->
+  <link rel="stylesheet" href="../animation.css" />
+</head>
+<body>
+
+  <!-- ── Navigation ── -->
+  <header role="banner">
+    <nav class="nav" role="navigation" aria-label="Main navigation">
+      <div class="nav__inner">
+        <a href="../index.html" class="nav__logo">ALIYAN<span>.</span></a>
+
+        <ul class="nav__menu" role="list">
+          <a href="../index.html"   class="nav__link">Home</a>
+          <a href="portfolioo.html"  class="nav__link">Work</a>
+          <a href="about.html"      class="nav__link">About</a>
+          <a href="contact.html"    class="nav__link active">Contact</a>
+        </ul>
+
+        <div class="nav__actions">
+          <a href="../images/aliyancv.jpg" target="_blank" class="btn btn--primary btn--sm">Hire Me</a>
+        </div>
+
+        <button class="nav__hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="nav__mobile" role="dialog" aria-label="Mobile navigation">
+      <a href="../index.html"   class="nav__link">Home</a>
+      <a href="portfolioo.html"  class="nav__link">Work</a>
+      <a href="about.html"      class="nav__link">About</a>
+      <a href="contact.html"    class="nav__link active">Contact</a>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ── Page Header ── -->
+    <section class="page-header">
+      <div class="page-header__bg" aria-hidden="true">
+        <div class="page-header__blob page-header__blob--1"></div>
+      </div>
+      <div class="container">
+        <div class="section__label reveal">Get In Touch</div>
+        <h1 class="page-header__title reveal">Contact Me</h1>
+        <p class="page-header__subtitle reveal">
+          Koi project hai ya sirf baat karni hai? Message karo — main jawab deta hoon.
+        </p>
+      </div>
+    </section>
+
+    <!-- ── Contact Section ── -->
+    <section class="section" style="padding-top: var(--space-4);">
+      <div class="container">
+        <div class="contact-grid">
+
+          <!-- ── Left: Info ── -->
+          <div class="contact-info reveal">
+
+            <h2 class="contact-info__heading">Baat Karte Hain <span>👋</span></h2>
+            <p class="contact-info__intro">
+              Main abhi naye projects ke liye available hoon. Shopify store, website, ya koi bhi web project — apna idea share karo aur hum milke kuch shandar banayenge.
+            </p>
+
+            <!-- Contact Items -->
+            <div class="contact-items">
+
+              <div class="contact-item">
+                <div class="contact-item__icon">📧</div>
+                <div>
+                  <div class="contact-item__label">Email</div>
+                  <a href="mailto:yaliyan786@gmail.com" class="contact-item__value">yaliyan786@gmail.com</a>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div class="contact-item__icon">📱</div>
+                <div>
+                  <div class="contact-item__label">Phone / WhatsApp</div>
+                  <a href="https://wa.me/923158759125" target="_blank" class="contact-item__value">+92 315 8759125</a>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div class="contact-item__icon">📍</div>
+                <div>
+                  <div class="contact-item__label">Location</div>
+                  <div class="contact-item__value">Pakistan — Gujrat</div>
+                </div>
+              </div>
+
+              <div class="contact-item">
+                <div class="contact-item__icon">⏰</div>
+                <div>
+                  <div class="contact-item__label">Response Time</div>
+                  <div class="contact-item__value">24 ghante ke andar jawab deta hoon</div>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Social Links -->
+            <div class="contact-social-wrap">
+              <div class="contact-social-label">Mujhe yahan bhi milein</div>
+              <div class="contact-social">
+                <a href="https://github.com/aliyan-yousaf" class="social-btn" target="_blank" rel="noopener">
+                  <span class="social-btn__icon">GH</span>
+                  <span>GitHub</span>
+                </a>
+                <a href="https://www.linkedin.com/in/aliyan-yousaf" class="social-btn" target="_blank" rel="noopener">
+                  <span class="social-btn__icon">in</span>
+                  <span>LinkedIn</span>
+                </a>
+                <a href="https://www.fiverr.com/sellers/aliyanyy77" class="social-btn" target="_blank" rel="noopener">
+                  <span class="social-btn__icon">Fv</span>
+                  <span>Fiverr</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Availability Badge -->
+            <div class="availability-badge">
+              <span class="availability-dot"></span>
+              <span>Abhi available hoon naye projects ke liye</span>
+            </div>
+
+          </div>
+
+          <!-- ── Right: Form ── -->
+          <div class="contact-form-wrap reveal">
+            <form class="contact-form" id="contactForm" novalidate>
+
+              <div class="form-grid">
+
+                <!-- Name -->
+                <div class="form-group">
+                  <label class="form-label" for="name">Aapka Naam *</label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    class="form-input"
+                    placeholder="aliyan y..."
+                    required
+                  />
+                  <span class="form-error" id="nameError">Naam zaroor daalo</span>
+                </div>
+
+                <!-- Email -->
+                <div class="form-group">
+                  <label class="form-label" for="email">Email Address *</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    class="form-input"
+                    placeholder="aliyan@example.com"
+                    required
+                  />
+                  <span class="form-error" id="emailError">Sahi email daalo</span>
+                </div>
+
+                <!-- Phone -->
+                <div class="form-group">
+                  <label class="form-label" for="phone">Phone (Optional)</label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    class="form-input"
+                    placeholder="+92 300 0000000"
+                  />
+                </div>
+
+                <!-- Subject -->
+                <div class="form-group">
+                  <label class="form-label" for="subject">Subject *</label>
+                  <select id="subject" name="subject" class="form-input form-select" required>
+                    <option value="" disabled selected>Select Project</option>
+                    <option value="shopify">Shopify Store</option>
+                    <option value="website">Website Development</option>
+                    <option value="landing">Landing Page</option>
+                    <option value="redesign">Website Redesign</option>
+                    <option value="other">Other</option>
+                  </select>
+                  <span class="form-error" id="subjectError">Subject zaroor chunein</span>
+                </div>
+
+                <!-- Budget -->
+                <div class="form-group form-group--full">
+                  <label class="form-label" for="budget">Budget Range (Optional)</label>
+                  <div class="budget-options">
+                    <label class="budget-chip">
+                      <input type="radio" name="budget" value="under-100">
+                      <span>Under $100</span>
+                    </label>
+                    <label class="budget-chip">
+                      <input type="radio" name="budget" value="100-300">
+                      <span>$100 – $300</span>
+                    </label>
+                    <label class="budget-chip">
+                      <input type="radio" name="budget" value="300-500">
+                      <span>$300 – $500</span>
+                    </label>
+                    <label class="budget-chip">
+                      <input type="radio" name="budget" value="500+">
+                      <span>$500+</span>
+                    </label>
+                  </div>
+                </div>
+
+                <!-- Message -->
+                <div class="form-group form-group--full">
+                  <label class="form-label" for="message">Message *</label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    class="form-textarea"
+                    rows="5"
+                    placeholder="Apna project describe karo — kya chahiye, kab chahiye, koi khaas requirement hai?"
+                    required
+                  ></textarea>
+                  <span class="form-error" id="messageError">Message zaroor likho</span>
+                  <div class="char-count"><span id="charCount">0</span> / 500</div>
+                </div>
+
+              </div>
+
+              <!-- Submit -->
+              <button type="submit" class="btn btn--primary btn--lg form-submit" id="submitBtn">
+                <span class="submit-text">Message Bhejo →</span>
+                <span class="submit-loading" style="display:none;">Sending...</span>
+              </button>
+
+              <!-- Success Message -->
+              <div class="form-success" id="formSuccess">
+                ✅ Shukriya! Aapka message mil gaya. Main jald jawab dunga.
+              </div>
+
+            </form>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+   
+
+  </main>
+
+  <!-- ── Footer ── -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a href="../index.html" class="footer__brand-logo">ALIYAN<span>.</span></a>
+          <p class="footer__brand-desc">Frontend developer building fast, accessible, and beautiful digital experiences that people love.</p>
+          <div class="footer__social">
+            <a href="https://github.com/aliyan-yousaf" class="social-icon" aria-label="GitHub">GH</a>
+            <a href="https://www.linkedin.com/in/aliyan-yousaf" class="social-icon" aria-label="LinkedIn">in</a>
+            <a href="https://www.fiverr.com/sellers/aliyanyy77" class="social-icon" aria-label="Fiverr">Fv</a>
+          </div>
+        </div>
+
+        <nav aria-label="Footer navigation: Pages">
+          <div class="footer__col-title">Pages</div>
+          <ul class="footer__links">
+            <li><a href="../index.html"  class="footer__link">Home</a></li>
+            <li><a href="about.html"     class="footer__link">About</a></li>
+            <li><a href="../portfolioo.html" class="footer__link">Portfolio</a></li>
+            <li><a href="contact.html"   class="footer__link">Contact</a></li>
+          </ul>
+        </nav>
+
+        <nav aria-label="Footer navigation: More">
+          <div class="footer__col-title">Services</div>
+          <ul class="footer__links">
+            <li><a href="../portfolioo.html" class="footer__link">Shopify Store</a></li>
+            <li><a href="../portfolioo.html" class="footer__link">Landing Page</a></li>
+            <li><a href="../portfolioo.html" class="footer__link">Website Design</a></li>
+            <li><a href="../portfolioo.html" class="footer__link">Redesign</a></li>
+          </ul>
+        </nav>
+
+        <div>
+          <div class="footer__col-title">Contact</div>
+          <ul class="footer__links">
+            <li><a href="mailto:yaliyan786@gmail.com" class="footer__link">yaliyan786@gmail.com</a></li>
+            <li><a href="tel:+923158759125" class="footer__link">+92 315 8759125</a></li>
+            <li><span class="footer__link">Pakistan — Gujrat</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__copy">© 2026 Aliyan Yousaf. All rights reserved.</p>
+        <p class="footer__copy">Aliyan's.com</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top -->
+  <a href="#main" class="back-to-top" aria-label="Back to top">↑</a>
+
+  <!-- Contact JS (inline) -->
+  <script>
+    'use strict';
+
+    /* ── Nav Scroll ── */
+    const nav = document.querySelector('.nav');
+    window.addEventListener('scroll', () => {
+      nav && nav.classList.toggle('scrolled', window.scrollY > 10);
+    }, { passive: true });
+
+    /* ── Theme ── */
+    const saved = localStorage.getItem('portfolio-theme');
+    const theme = saved || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+    document.documentElement.setAttribute('data-theme', theme);
+
+    /* ── Hamburger ── */
+    const hamburger = document.querySelector('.nav__hamburger');
+    const mobileMenu = document.querySelector('.nav__mobile');
+    if (hamburger && mobileMenu) {
+      hamburger.addEventListener('click', () => {
+        const open = mobileMenu.classList.toggle('open');
+        hamburger.classList.toggle('active', open);
+        hamburger.setAttribute('aria-expanded', open);
+        document.body.style.overflow = open ? 'hidden' : '';
+      });
+      mobileMenu.querySelectorAll('.nav__link').forEach(l => {
+        l.addEventListener('click', () => {
+          mobileMenu.classList.remove('open');
+          hamburger.classList.remove('active');
+          document.body.style.overflow = '';
+        });
+      });
+      document.addEventListener('click', e => {
+        if (!nav.contains(e.target)) {
+          mobileMenu.classList.remove('open');
+          hamburger.classList.remove('active');
+          document.body.style.overflow = '';
+        }
+      });
+    }
+
+    /* ── Scroll Reveal ── */
+    const revealEls = document.querySelectorAll('.reveal, .reveal-stagger');
+    const ro = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('revealed'); ro.unobserve(e.target); } });
+    }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+    revealEls.forEach(el => ro.observe(el));
+
+    /* ── Char Counter ── */
+    const msgEl = document.getElementById('message');
+    const charEl = document.getElementById('charCount');
+    if (msgEl && charEl) {
+      msgEl.addEventListener('input', () => {
+        const len = msgEl.value.length;
+        charEl.textContent = len;
+        charEl.style.color = len > 450 ? '#FF6584' : '';
+        if (len > 500) msgEl.value = msgEl.value.slice(0, 500);
+      });
+    }
+
+    /* ── Form Validation & Submit ── */
+    const form = document.getElementById('contactForm');
+    if (form) {
+      form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        let valid = true;
+
+        const name    = document.getElementById('name');
+        const email   = document.getElementById('email');
+        const subject = document.getElementById('subject');
+        const message = document.getElementById('message');
+
+        // Reset errors
+        document.querySelectorAll('.form-error').forEach(el => el.classList.remove('visible'));
+        document.querySelectorAll('.form-input, .form-textarea').forEach(el => el.classList.remove('error'));
+
+        // Validate
+        if (!name.value.trim()) {
+          document.getElementById('nameError').classList.add('visible');
+          name.classList.add('error'); valid = false;
+        }
+        if (!email.value.trim() || !/^\S+@\S+\.\S+$/.test(email.value)) {
+          document.getElementById('emailError').classList.add('visible');
+          email.classList.add('error'); valid = false;
+        }
+        if (!subject.value) {
+          document.getElementById('subjectError').classList.add('visible');
+          subject.classList.add('error'); valid = false;
+        }
+        if (!message.value.trim() || message.value.trim().length < 10) {
+          document.getElementById('messageError').classList.add('visible');
+          message.classList.add('error'); valid = false;
+        }
+
+        if (!valid) return;
+
+        // Submit simulation
+        const btn = document.getElementById('submitBtn');
+        btn.querySelector('.submit-text').style.display = 'none';
+        btn.querySelector('.submit-loading').style.display = 'inline';
+        btn.disabled = true;
+
+        setTimeout(() => {
+          btn.querySelector('.submit-text').style.display = 'inline';
+          btn.querySelector('.submit-loading').style.display = 'none';
+          btn.disabled = false;
+          document.getElementById('formSuccess').classList.add('visible');
+          form.reset();
+          if (charEl) charEl.textContent = '0';
+          setTimeout(() => document.getElementById('formSuccess').classList.remove('visible'), 5000);
+        }, 1500);
+      });
+    }
+
+    /* ── Back to Top ── */
+    const btt = document.querySelector('.back-to-top');
+    if (btt) {
+      window.addEventListener('scroll', () => btt.classList.toggle('visible', window.scrollY > 400), { passive: true });
+      btt.addEventListener('click', e => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); });
+    }
+
+    /* ── Page Enter ── */
+    const main = document.querySelector('main');
+    if (main) {
+      main.style.cssText = 'opacity:0;transform:translateY(16px);transition:opacity .5s ease,transform .5s ease';
+      setTimeout(() => main.style.cssText = 'opacity:1;transform:translateY(0);transition:opacity .5s ease,transform .5s ease', 50);
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta property="og:type" content="website" />
+  <title>Aliyan Yousaf — Frontend Developer</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+</head>
+<body>
+
+  <!-- ── Navigation ── -->
+  <header role="banner">
+    <nav class="nav" role="navigation" aria-label="Main navigation">
+      <div class="nav__inner">
+        <a href="index.html" class="nav__logo">ALIYAN<span>.</span></a>
+
+        <ul class="nav__menu" role="list">
+       <a href="index.html"        class="nav__link">Home</a>
+       <a href="./pages/portfolioo.html"    class="nav__link">Work</a>
+       <a href="./pages/about.html"        class="nav__link">About</a>
+       <a href="./pages/contact.html"      class="nav__link">Contact</a>
+        </ul>
+
+        <div class="nav__actions">
+       <a href="./images/aliyancv.pdf" target="_blank" class="btn btn--primary btn--sm">Resume</a>
+        </div>
+
+        <button class="nav__hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+
+    <div class="nav__mobile" role="dialog" aria-label="Mobile navigation">
+      <a href="index.html"        class="nav__link">Home</a>
+      <a href="./pages/portfolioo.html"    class="nav__link">Work</a>
+      <a href="./pages/about.html"        class="nav__link">About</a>
+      <a href="./pages/contact.html"      class="nav__link">Contact</a>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <section class="hero" aria-label="Introduction">
+      <div class="hero__bg" aria-hidden="true">
+        <div class="hero__bg-blob hero__bg-blob--1"></div>
+        <div class="hero__bg-blob hero__bg-blob--2"></div>
+      </div>
+
+      <div class="container">
+        <div class="hero__grid">
+
+          <div class="hero__content">
+            <div class="hero__eyebrow">Available for freelance work</div>
+
+            <h1 class="hero__title">
+              <span class="line">Hi, I'm Aliyan</span>
+            </h1>
+
+            <p class="hero__description">
+              I am a web developer skilled in HTML, CSS, JavaScript, and Shopify. I build fast, responsive, and user-friendly websites and online stores.
+            </p>
+
+            <div class="hero__actions">
+              <a href="portfolioo.html" class="btn btn--primary btn--lg">View My Work</a>
+              <a href="./pages/about.html"     class="btn btn--outline btn--lg">About Me</a>
+            </div>
+
+            <div class="hero__social">
+              <span class="hero__social-label">Find me on</span>
+              <a href="https://github.com/aliyan-yousaf" class="social-btn" target="_blank" rel="noopener">
+                  <span>GitHub</span>
+                </a>
+              <a href="https://www.linkedin.com/in/aliyan-yousaf" class="social-btn" target="_blank" rel="noopener">
+                  <span>LinkedIn</span>
+                </a>
+              <a href="https://www.fiverr.com/aliyanyy77" class="social-btn" target="_blank" rel="noopener">
+                  <span>Fiverr</span>
+                  </a>
+              
+            </div>
+
+          </div>
+
+          <div class="hero__visual" aria-hidden="true">
+            <div class="hero__avatar-wrap float-anim">
+              <div class="hero__avatar-ring"></div>
+              <img class="hero__avatar" src="./images/aliyan's.jpeg" alt="Alex Morgan"
+            </div>           
+    </section>
+
+    <!-- ── Stats Strip ── -->
+    <div class="stats-strip">
+      <div class="container">
+        <div class="stats-strip__inner reveal-stagger">
+          <div class="stat-item">
+            <div class="stat-item__num"><span class="counter" data-target="5" data-suffix="+">3+</span></div>
+            <div class="stat-item__label">Years of Experience</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-item__num"><span class="counter" data-target="60" data-suffix="+">100+</span></div>
+            <div class="stat-item__label">Projects Completed</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-item__num"><span class="counter" data-target="40" data-suffix="+">100+</span></div>
+            <div class="stat-item__label">Happy Clients</div>
+          </div>
+          <div class="stat-item">
+            <div class="stat-item__num"><span class="counter" data-target="12" data-suffix="">200K</span></div>
+            <div class="stat-item__label">Awards Earned</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── Featured Work preview ── -->
+    <section class="section">
+      <div class="container">
+        <header class="section__header reveal">
+          <div class="section__label">Selected Work</div>
+          <h2 class="section__title">Recent Projects</h2>
+          <p class="section__subtitle">A few Shopify projects I’ve built recently each one a unique challenge, carefully crafted with clean design, smooth functionality, and a focus on great user experience.</p>
+        </header>
+
+        <div class="portfolio-grid reveal-stagger">
+          <!-- Card 1 -->
+          <article class="project-card">
+            <div class="project-card__thumb">
+              <img src="./images/work1.jpeg" alt="" srcset="">
+              <div class="project-card__overlay">
+                <a href="./pages/portfolioo.html" class="btn btn--primary btn--sm">View More</a>
+              </div>
+            </div>
+            <div class="project-card__body">
+              <div class="project-card__cat">E-Commerce</div>
+              <h3 class="project-card__title">Brands Village</h3>
+              <p class="project-card__desc">BrandsVillage a modern Shopify store built for a smooth shopping experience, clean design, and easy product browsing.</p>
+              <div class="project-card__tags">
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">LIQUID</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="project-card">
+            <div class="project-card__thumb">
+              <img src="./images/work2.jpeg" alt="" srcset="">
+
+              <div class="project-card__overlay">
+                <a href="./pages/portfolioo.html" class="btn btn--primary btn--sm">View More</a>
+              </div>
+            </div>
+            <div class="project-card__body">
+              <div class="project-card__cat">Dropshipping Store</div>
+              <h3 class="project-card__title">Teuto Trend</h3>
+              <p class="project-card__desc">A modern Shopify store designed with a clean layout, smooth navigation, and a focus on delivering a seamless shopping experience.</p>
+              <div class="project-card__tags">
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">LIQUID</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="project-card">
+            <div class="project-card__thumb">
+              <img src="./images/work3.jpeg" alt="" srcset="">
+              <div class="project-card__overlay">
+                <a href="./pages/portfolioo.html" class="btn btn--primary btn--sm">View More</a>
+              </div>
+            </div>
+            <div class="project-card__body">
+              <div class="project-card__cat">E-Commerce</div>
+              <h3 class="project-card__title">Fetchy</h3>
+              <p class="project-card__desc">A stylish and responsive Shopify store built for simplicity, speed, and an engaging user experience that makes browsing effortless.</p>
+              <div class="project-card__tags">
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">LIQUID</span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="text-center" style="margin-top:3rem">
+          <a href="./pages/portfolioo.html" class="btn btn--outline btn--lg">See All Projects →</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ── CTA Banner ── -->
+    <section class="section" style="padding-top:0">
+      <div class="container">
+        <div class="card reveal" style="text-align:center;padding:4rem 2rem;background:linear-gradient(135deg,rgba(108,99,255,0.1),rgba(255,101,132,0.05));border-color:rgba(108,99,255,0.3)">
+          <div class="section__label" style="justify-content:center;margin-bottom:1rem">Let's work together</div>
+          <h2 style="font-size:var(--text-4xl);margin-bottom:1rem">Have a project in mind?</h2>
+          <p style="max-width:480px;margin:0 auto 2rem">I'm currently available for new projects. Let's build something great — I'd love to hear your idea.</p>
+          <a href="./pages/contact.html" class="btn btn--primary btn--lg">Start a Conversation →</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── Footer ── -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a href="index.html" class="footer__brand-logo">ALIYAN<span>.</span></a>
+          <p class="footer__brand-desc">Frontend developer building fast, accessible, and beautiful digital experiences that people love.</p>
+          <div class="footer__social">
+            <a href="https://github.com/aliyan-yousaf" class="social-icon" aria-label="GitHub">&#xE624;</a>
+            <a href="https://www.linkedin.com/in/aliyan-yousaf" class="social-icon" aria-label="LinkedIn">&#xE627;</a>
+            <a href="https://www.fiverr.com/sellers/aliyanyy77" class="social-icon" aria-label="FIVERR">&#xE61B;</a>
+          </div>
+        </div>
+
+        <nav aria-label="Footer navigation: Pages">
+          <div class="footer__col-title">Pages</div>
+          <ul class="footer__links">
+            <li><a href="index.html"        class="footer__link">Home</a></li>
+            <li><a href="./pages/about.html"        class="footer__link">About</a></li>
+            <li><a href="./pages/contact.html"     class="footer__link">Contact</a></li>
+            <li><a href="portfolioo.html"    class="footer__link">Portfolio</a></li>
+          </ul>
+        </nav>
+
+        <nav aria-label="Footer navigation: More">
+          <div class="footer__col-title">More</div>
+          <ul class="footer__links">
+            <li><a href="#"       class="footer__link">Skills</a></li>
+            <li><a href="#" class="footer__link">Testimonials</a></li>
+            <li><a href="#"         class="footer__link">Blog</a></li>
+          <li><a href="./pages/contact.html"      class="footer__link">Contact</a></li>
+          </ul>
+         </nav>
+
+        <div>
+          <div class="footer__col-title">Contact</div>
+          <ul class="footer__links">
+            <li><a href="#" class="footer__link">yaliyan786@gmail.com</a></li>
+            <li><a href="#"            class="footer__link">+92 3158759125</a></li>
+            <li><span class="footer__link">Pakistan - Gujrat</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__copy">© 2026 Aliyan Yousaf. All rights reserved.</p>
+        <p class="footer__copy">Aliyan's.com</p>
+      </div>
+    </div>
+  </footer>
+  <a href="#main" class="back-to-top" aria-label="Back to top">↑</a>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+  <link rel="stylesheet" href="style.css">
+</body>
+</html>

@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Aliyan Yousaf — Portfolio. Shopify & Frontend Projects." />
+  <title>Portfolio — Aliyan Yousaf</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="../style.css" />
+  
+</head>
+<body>
+
+  <!-- ── Navigation ── -->
+  <header role="banner">
+    <nav class="nav" role="navigation" aria-label="Main navigation">
+      <div class="nav__inner">
+        <a href="../index.html" class="nav__logo">ALIYAN<span>.</span></a>
+
+        <ul class="nav__menu" role="list">
+        <a href="../index.html"        class="nav__link">Home</a>
+        <a href="./portfolioo.html"    class="nav__link">Work</a>
+        <a href="about.html"        class="nav__link">About</a>
+        <a href="contact.html"      class="nav__link">Contact</a>
+        </ul>
+
+        <div class="nav__actions">
+          <a href="../images/aliyancv.pdf" target="_blank" class="btn btn--primary btn--sm">Resume</a>
+        </div>
+
+        <button class="nav__hamburger" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile menu -->
+    <div class="nav__mobile" role="dialog" aria-label="Mobile navigation">
+      <a href="../index.html"   class="nav__link">Home</a>
+      <a href="./portfolioo.html"  class="nav__link active">Work</a>
+      <a href="./pages/about.html"      class="nav__link">About</a>
+     <a href="./pages/contact.html"      class="nav__link">Contact</a>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ── Page Header ── -->
+    <section class="page-header">
+      <div class="page-header__bg" aria-hidden="true">
+        <div class="page-header__blob page-header__blob--1"></div>
+      </div>
+      <div class="container">
+        <div class="section__label reveal">My Work</div>
+        <h1 class="page-header__title reveal">Portfolio</h1>
+        <p class="page-header__subtitle reveal">
+          A few Shopify projects I’ve built recently each one a unique challenge, carefully crafted with clean design, smooth functionality, and a focus on great user experience.
+
+        </p>
+      </div>
+    </section>
+
+    <!-- ── Portfolio Section ── -->
+    <section class="section" style="padding-top: var(--space-8);">
+      <div class="container">
+
+        <!-- Filter Buttons -->
+        <div class="portfolio-filter reveal">
+          <button class="filter-btn active" data-filter="all">All Projects</button>
+          <button class="filter-btn" data-filter="ecommerce">E-Commerce</button>
+          <button class="filter-btn" data-filter="dropshipping">Dropshipping</button>
+          <button class="filter-btn" data-filter="landing">Landing Page</button>
+        </div>
+
+        <!-- Projects Grid -->
+        <div class="portfolio-grid reveal-stagger">
+
+          <!-- Card 1 -->
+          <article class="project-card" data-category="ecommerce">
+            <div class="project-card__thumb">
+              <img src="../images/work1.jpeg" alt="Brands Village" loading="lazy">
+              <div class="project-card__overlay">
+                <a href="#" target="_blank" class="btn btn--primary btn--sm">Live Site</a>
+              </div>
+            </div>
+            <div class="project-card__body">
+              <div class="project-card__cat">E-Commerce</div>
+              <h3 class="project-card__title">Brands Village</h3>
+              <p class="project-card__desc">BrandsVillage — ek modern Shopify store smooth shopping experience, clean design, aur easy product browsing ke saath.</p>
+              <div class="project-card__tags">
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">Liquid</span>
+                <span class="tag">Shopify</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="project-card" data-category="dropshipping">
+            <div class="project-card__thumb">
+              <img src="../images/work2.jpeg" alt="Teuto Trend" loading="lazy">
+              <div class="project-card__overlay">
+                <a href="#" target="_blank" class="btn btn--primary btn--sm">Live Site</a>
+              </div>
+            </div>
+            <div class="project-card__body">
+              <div class="project-card__cat">Dropshipping Store</div>
+              <h3 class="project-card__title">Teuto Trend</h3>
+              <p class="project-card__desc">Clean layout, smooth navigation aur seamless shopping experience ke saath ek modern Shopify dropshipping store.</p>
+              <div class="project-card__tags">
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">Liquid</span>
+                <span class="tag">Shopify</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="project-card" data-category="ecommerce">
+            <div class="project-card__thumb">
+              <img src="../images/work3.jpeg" alt="Fetchy" loading="lazy">
+              <div class="project-card__overlay">
+                <a href="#" target="_blank" class="btn btn--primary btn--sm">Live Site</a>
+              </div>
+            </div>
+            <div class="project-card__body">
+              <div class="project-card__cat">E-Commerce</div>
+              <h3 class="project-card__title">Fetchy</h3>
+              <p class="project-card__desc">Stylish aur responsive Shopify store — simplicity, speed aur engaging user experience pe focus ke saath.</p>
+              <div class="project-card__tags">
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">Liquid</span>
+                <span class="tag">Shopify</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 4 — apna project add karo yahan -->
+          <article class="project-card" data-category="landing">
+            <div class="project-card__thumb">
+              <img src="../images/work4.png" alt="Project 4" loading="lazy">
+              <div class="project-card__overlay">
+                <a href="#" target="_blank" class="btn btn--primary btn--sm">Live Site</a>
+              </div>
+            </div>
+            <div class="project-card__body">
+              <div class="project-card__cat">Landing Page</div>
+              <h3 class="project-card__title">Project Title</h3>
+              <p class="project-card__desc">Apna project description yahan likho. Kya banaya, kya khaas hai.</p>
+              <div class="project-card__tags">
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">JavaScript</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 5 -->
+          <article class="project-card" data-category="ecommerce">
+            <div class="project-card__thumb">
+              <img src="../images/work5.png" alt="Project 5" loading="lazy">
+              <div class="project-card__overlay">
+                <a href="#" target="_blank" class="btn btn--primary btn--sm">Live Site</a>
+              </div>
+            </div>
+            <div class="project-card__body">
+              <div class="project-card__cat">E-Commerce</div>
+              <h3 class="project-card__title">Project Title</h3>
+              <p class="project-card__desc">Apna project description yahan likho.</p>
+              <div class="project-card__tags">
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">Liquid</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- Card 6 -->
+          <article class="project-card" data-category="dropshipping">
+            <div class="project-card__thumb">
+              <img src="../images/work6.jpg" alt="Project 6" loading="lazy">
+              <div class="project-card__overlay">
+                <a href="#" target="_blank" class="btn btn--primary btn--sm">Live Site</a>
+              </div>
+            </div>
+            <div class="project-card__body">
+              <div class="project-card__cat">Dropshipping</div>
+              <h3 class="project-card__title">Project Title</h3>
+              <p class="project-card__desc">Apna project description yahan likho.</p>
+              <div class="project-card__tags">
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">Liquid</span>
+              </div>
+            </div>
+          </article>
+
+        </div><!-- /portfolio-grid -->
+
+      </div>
+    </section>
+
+    <!-- ── CTA ── -->
+    <section class="section" style="padding-top:0">
+      <div class="container">
+        <div class="card reveal" style="text-align:center;padding:4rem 2rem;background:linear-gradient(135deg,rgba(108,99,255,0.1),rgba(255,101,132,0.05));border-color:rgba(108,99,255,0.3)">
+          <div class="section__label" style="justify-content:center;margin-bottom:1rem">Let's work together</div>
+          <h2 style="font-size:var(--text-4xl);margin-bottom:1rem">Have a project in mind?</h2>
+          <p style="max-width:480px;margin:0 auto 2rem">I'm currently available for new projects. Let's build something great I'd love to hear your idea.</p>
+          <a href="./pages/contact.html" class="btn btn--primary btn--lg">Start a Conversation</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ── Footer ── -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__top">
+        <div class="footer__brand">
+          <a href="../index.html" class="footer__brand-logo">ALIYAN<span>.</span></a>
+          <p class="footer__brand-desc">Frontend developer building fast, accessible, and beautiful digital experiences that people love.</p>
+          <div class="footer__social">
+            <a href="https://github.com/aliyan-yousaf" class="social-icon" aria-label="GitHub">&#xE624;</a>
+            <a href="https://www.linkedin.com/in/aliyan-yousaf" class="social-icon" aria-label="LinkedIn">&#xE627;</a>
+            <a href="https://www.fiverr.com/sellers/aliyanyy77" class="social-icon" aria-label="Fiverr">&#xE61B;</a>
+          </div>
+        </div>
+
+        <nav aria-label="Footer navigation: Pages">
+          <div class="footer__col-title">Pages</div>
+          <ul class="footer__links">
+            <li><a href="../index.html"   class="footer__link">Home</a></li>
+            <li><a href="about.html"      class="footer__link">About</a></li>
+            <li><a href="portfolioo.html"  class="footer__link">Portfolio</a></li>
+            <li><a href="contact.html"    class="footer__link">Contact</a></li>
+          </ul>
+        </nav>
+
+        <nav aria-label="Footer navigation: More">
+          <div class="footer__col-title">More</div>
+          <ul class="footer__links">
+            <li><a href="#"        class="footer__link">Skills</a></li>
+            <li><a href="#"  class="footer__link">Testimonials</a></li>
+            <li><a href="#"          class="footer__link">Blog</a></li>
+            <li><a href="contact.html"       class="footer__link">Contact</a></li>
+          </ul>
+        </nav>
+
+        <div>
+          <div class="footer__col-title">Contact</div>
+          <ul class="footer__links">
+            <li><a href="mailto:yaliyan786@gmail.com" class="footer__link">yaliyan786@gmail.com</a></li>
+            <li><a href="tel:+923158759125"           class="footer__link">+92 315 8759125</a></li>
+            <li><span class="footer__link">Pakistan — Gujrat</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__copy">© 2026 Aliyan Yousaf. All rights reserved.</p>
+        <p class="footer__copy">Aliyan's.com</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top -->
+  <a href="#main" class="back-to-top" aria-label="Back to top">↑</a>
+
+  <!-- Scripts -->
+  <script src="portfolio.js"></script>
+
+  <!-- Portfolio Filter Script -->
+  <script>
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // Active class update karo
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        const filter = btn.dataset.filter;
+
+        projectCards.forEach(card => {
+          if (filter === 'all' || card.dataset.category === filter) {
+            card.style.display = 'block';
+            card.style.animation = 'fadeIn 0.3s ease forwards';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  </script>
+
+  <style>
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+
+</body>
+</html>
