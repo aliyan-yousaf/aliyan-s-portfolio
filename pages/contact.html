@@ -144,7 +144,13 @@
 
           <!-- ── Right: Form ── -->
           <div class="contact-form-wrap reveal">
-            <form class="contact-form" id="contactForm" novalidate>
+            <form class="contact-form" id="contactForm" action="https://api.web3forms.com/submit" method="POST" novalidate>
+
+              <!-- Web3Forms Access Key -->
+              <input type="hidden" name="access_key" value="c1d5bf3e-f32b-4e3a-ae8b-70b92dba5211">
+              <input type="hidden" name="subject" value="New message from portfolio contact form">
+              <input type="hidden" name="from_name" value="Aliyan Portfolio Website">
+              <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
 
               <div class="form-grid">
 
@@ -191,7 +197,7 @@
                 <!-- Subject -->
                 <div class="form-group">
                   <label class="form-label" for="subject">Project</label>
-                  <select id="subject" name="subject" class="form-input form-select" required>
+                  <select id="subject" name="project_type" class="form-input form-select" required>
                     <option value="" disabled selected>Select Project</option>
                     <option value="shopify">Shopify Store</option>
                     <option value="website">Website Development</option>
@@ -251,6 +257,11 @@
               <!-- Success Message -->
               <div class="form-success" id="formSuccess">
                 ✅ Thank you! Your message has been received. I will reply soon.
+              </div>
+
+              <!-- Error Message -->
+              <div class="form-success" id="formError" style="display:none; background:#FF6584; color:#fff;">
+                ❌ Something went wrong. Please try again or email me directly.
               </div>
 
             </form>
@@ -352,7 +363,7 @@
       });
     }
 
-    /* ── Form Validation & Submit ── */
+    /* ── Form Validation & Submit (Web3Forms) ── */
     const form = document.getElementById('contactForm');
     if (form) {
       form.addEventListener('submit', function(e) {
@@ -367,6 +378,7 @@
         // Reset errors
         document.querySelectorAll('.form-error').forEach(el => el.classList.remove('visible'));
         document.querySelectorAll('.form-input, .form-textarea').forEach(el => el.classList.remove('error'));
+        document.getElementById('formError').style.display = 'none';
 
         // Validate
         if (!name.value.trim()) {
@@ -388,21 +400,40 @@
 
         if (!valid) return;
 
-        // Submit simulation
+        // Submit via Web3Forms
         const btn = document.getElementById('submitBtn');
         btn.querySelector('.submit-text').style.display = 'none';
         btn.querySelector('.submit-loading').style.display = 'inline';
         btn.disabled = true;
 
-        setTimeout(() => {
+        const formData = new FormData(form);
+
+        fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Accept': 'application/json' },
+          body: formData
+        })
+        .then(res => res.json())
+        .then(data => {
           btn.querySelector('.submit-text').style.display = 'inline';
           btn.querySelector('.submit-loading').style.display = 'none';
           btn.disabled = false;
-          document.getElementById('formSuccess').classList.add('visible');
-          form.reset();
-          if (charEl) charEl.textContent = '0';
-          setTimeout(() => document.getElementById('formSuccess').classList.remove('visible'), 5000);
-        }, 1500);
+
+          if (data.success) {
+            document.getElementById('formSuccess').classList.add('visible');
+            form.reset();
+            if (charEl) charEl.textContent = '0';
+            setTimeout(() => document.getElementById('formSuccess').classList.remove('visible'), 5000);
+          } else {
+            document.getElementById('formError').style.display = 'block';
+          }
+        })
+        .catch(() => {
+          btn.querySelector('.submit-text').style.display = 'inline';
+          btn.querySelector('.submit-loading').style.display = 'none';
+          btn.disabled = false;
+          document.getElementById('formError').style.display = 'block';
+        });
       });
     }
 
