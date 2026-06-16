@@ -4097,3 +4097,7 @@ a.contact-item__value:hover { color: var(--clr-accent); }
   .budget-chip span { padding: var(--space-2) var(--space-3); font-size: 0.7rem; }
   .contact-social { gap: var(--space-2); }
 }
+
+.hero {
+  min-height: 100dvh !important;
+}
