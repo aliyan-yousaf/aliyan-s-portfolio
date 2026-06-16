@@ -455,7 +455,7 @@ input, textarea, select {
 
 /* ── 5. Hero Section ── */
 .hero {
-  min-height: 100vh;
+  min-height: 100dvh;
   display: flex;
   align-items: center;
   padding: calc(var(--nav-height) + var(--space-12)) 0 var(--space-24);
