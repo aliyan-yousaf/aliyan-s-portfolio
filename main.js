@@ -7,18 +7,16 @@ function ready(fn) {
 
 ready(function () {
 
-  const THEME_KEY = 'portfolio-theme';
   const themeToggleBtns = document.querySelectorAll('.theme-toggle');
-  const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
 
   themeToggleBtns.forEach(btn => {
     btn.addEventListener('click', () => {
       const current = document.documentElement.getAttribute('data-theme') || 'dark';
-      applyTheme(current === 'dark' ? 'light' : 'dark');
+      const next = current === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('portfolio-theme', next);
     });
   });
-
-  initTheme();
 
   const nav = document.querySelector('.nav');
   const navLinks = document.querySelectorAll('.nav__link');
@@ -47,7 +45,8 @@ ready(function () {
 
   if (hamburger && mobileMenu) {
 
-    hamburger.addEventListener('click', () => {
+    hamburger.addEventListener('click', (e) => {
+      e.stopPropagation();
       const isOpen = mobileMenu.classList.contains('open');
       mobileMenu.classList.toggle('open');
       hamburger.classList.toggle('active');
@@ -55,17 +54,12 @@ ready(function () {
       document.body.style.overflow = isOpen ? '' : 'hidden';
     });
 
-    mobileMenu.querySelectorAll('.nav__link').forEach(link => {
-      link.addEventListener('click', () => {
-        mobileMenu.classList.remove('open');
-        hamburger.classList.remove('active');
-        hamburger.setAttribute('aria-expanded', 'false');
-        document.body.style.overflow = '';
-      });
+    mobileMenu.addEventListener('click', (e) => {
+      e.stopPropagation();
     });
 
     document.addEventListener('click', (e) => {
-      if (!nav.contains(e.target)) {
+      if (mobileMenu.classList.contains('open')) {
         mobileMenu.classList.remove('open');
         hamburger.classList.remove('active');
         hamburger.setAttribute('aria-expanded', 'false');
