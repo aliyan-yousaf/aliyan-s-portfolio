@@ -1851,7 +1851,7 @@ input, textarea, select {
 
 
 :root {
-  --clr-bg:          #0D0D0F;
+  --clr-bg:          #0f0e1a;
   --clr-surface:     #141417;
   --clr-surface-2:   #1C1C21;
   --clr-border:      #2A2A33;
@@ -4130,7 +4130,7 @@ body {
    SECTION
 ════════════════════════════ */
 .testi-section {
-  background: #18172a;
+  background: #0f0e1a;
   padding: 90px 48px;
   min-height: 100vh;
   position: relative;
