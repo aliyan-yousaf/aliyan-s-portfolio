@@ -239,3 +239,9 @@ body{
 .btn:hover{
     background: #1d4ed8;
 }
+
+@media (max-width: 768px) {
+ .about{
+  margin-bottom: -200px;
+ }
+}
