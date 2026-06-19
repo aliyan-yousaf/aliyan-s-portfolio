@@ -220,3 +220,52 @@ ready(function () {
   }
 
 });
+
+/* ════════════════════════════════════════
+   TESTIMONIALS  —  script.js
+════════════════════════════════════════ */
+
+const cards = document.querySelectorAll('.testi-card');
+const dots  = document.querySelectorAll('.dot');
+
+/* ── 1. Scroll-triggered card animation ── */
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const card  = entry.target;
+      const delay = parseInt(card.dataset.delay || 0);
+
+      setTimeout(() => {
+        card.classList.add('visible');
+      }, delay);
+
+      observer.unobserve(card);
+    }
+  });
+}, { threshold: 0.15 });
+
+cards.forEach(card => observer.observe(card));
+
+/* ── 2. Hover dim effect ── */
+cards.forEach(card => {
+  card.addEventListener('mouseenter', () => {
+    cards.forEach(c => {
+      c.style.transition = 'opacity 0.3s';
+      c.style.opacity    = (c === card) ? '1' : '0.45';
+    });
+  });
+
+  card.addEventListener('mouseleave', () => {
+    cards.forEach(c => {
+      c.style.opacity = '1';
+    });
+  });
+});
+
+/* ── 3. Dot navigation ── */
+dots.forEach(dot => {
+  dot.addEventListener('click', () => {
+    dots.forEach(d => d.classList.remove('active'));
+    dot.classList.add('active');
+  });
+});
