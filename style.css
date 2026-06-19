@@ -4130,7 +4130,7 @@ body {
    SECTION
 ════════════════════════════ */
 .testi-section {
-  /* background: #0d0d0f; */
+  background: #18172a;
   padding: 90px 48px;
   min-height: 100vh;
   position: relative;
@@ -4380,15 +4380,64 @@ body {
 }
 
 /* ════════════════════════════
-   RESPONSIVE
+   RESPONSIVE — TABLET
 ════════════════════════════ */
 @media (max-width: 860px) {
   .testi-grid  { grid-template-columns: repeat(2, 1fr); }
   .testi-title { font-size: 28px; }
 }
 
+/* ════════════════════════════
+   RESPONSIVE — MOBILE SWIPE
+════════════════════════════ */
 @media (max-width: 560px) {
-  .testi-section { padding: 60px 20px; }
-  .testi-grid    { grid-template-columns: 1fr; }
-  .testi-title   { font-size: 24px; }
+  .testi-section {
+    padding: 60px 0;
+    overflow: hidden;
+  }
+
+  .testi-header {
+    padding: 0 20px;
+    margin-bottom: 40px;
+  }
+
+  .testi-title { font-size: 24px; }
+
+  /* Swipe container */
+  .testi-grid {
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 0;
+    padding: 0 20px 20px;
+    margin: 0 0 40px 0;
+    max-width: 100%;
+    /* Fix: items take full visible width */
+    width: 100%;
+  }
+
+  .testi-grid::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Each card = exactly one screen width minus padding */
+  .testi-card {
+    flex: 0 0 calc(100vw - 40px);
+    width: calc(100vw - 40px);
+    min-width: calc(100vw - 40px);
+    max-width: calc(100vw - 40px);
+    scroll-snap-align: start;
+    margin-right: 16px;
+    /* Reset transforms so card shows fully */
+    transform: none !important;
+    opacity: 1 !important;
+    animation: none !important;
+  }
+
+  .testi-card:last-child {
+    margin-right: 0;
+  }
 }
