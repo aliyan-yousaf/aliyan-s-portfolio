@@ -4441,3 +4441,8 @@ body {
     margin-right: 0;
   }
 }
+
+.hed{
+  display: flex;
+  justify-content: center;
+}
