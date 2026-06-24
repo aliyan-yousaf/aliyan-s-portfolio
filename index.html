@@ -21,14 +21,14 @@
   --surface-3:   #1e1e2a;
   --border:      #252535;
   --border-2:    #2e2e42;
-  --accent:      #6C63FF;
-  --accent-2:    #FF6584;
-  --accent-3:    #00D4AA;
-  --accent-glow: rgba(108,99,255,0.22);
-  --accent-glow2:rgba(108,99,255,0.08);
-  --text:        #EEEEF8;
-  --text-muted:  #8888A0;
-  --text-faint:  #44445A;
+  --accent:      #7B72FF;
+  --accent-2:    #FF5C7F;
+  --accent-3:    #00E5B5;
+  --accent-glow: rgba(123,114,255,0.25);
+  --accent-glow2:rgba(123,114,255,0.09);
+  --text:        #F4F4FF;
+  --text-muted:  #A0A0C0;
+  --text-faint:  #555570;
   --white:       #FFFFFF;
 
   --display: 'Syne', sans-serif;
@@ -66,6 +66,82 @@
   --max-w:   1200px;
 }
 
+/* ═══════════════════════════════════════════════
+   LIGHT MODE TOKENS
+═══════════════════════════════════════════════ */
+[data-theme="light"] {
+  --bg:          #F0EDFF;
+  --surface:     #FAFAFF;
+  --surface-2:   #EDE9FF;
+  --surface-3:   #E4DFFF;
+  --border:      #D4CFEE;
+  --border-2:    #C2BCEC;
+  --accent:      #5B52F0;
+  --accent-2:    #FF4D74;
+  --accent-3:    #00B894;
+  --accent-glow: rgba(91,82,240,0.18);
+  --accent-glow2:rgba(91,82,240,0.06);
+  --text:        #0F0D2A;
+  --text-muted:  #4A4770;
+  --text-faint:  #8E8BB0;
+  --shadow-sm:   0 1px 4px rgba(91,82,240,0.08);
+  --shadow-md:   0 4px 20px rgba(91,82,240,0.12);
+  --shadow-lg:   0 8px 40px rgba(91,82,240,0.15);
+  --shadow-xl:   0 20px 60px rgba(91,82,240,0.18);
+  --glow:        0 0 40px rgba(91,82,240,0.2);
+}
+
+[data-theme="light"] body { background: var(--bg); }
+[data-theme="light"] .nav { background: rgba(240,237,255,0.8); border-bottom-color: var(--border); }
+[data-theme="light"] .nav.scrolled { background: rgba(240,237,255,0.95); }
+[data-theme="light"] .hero__grid-bg { opacity: 0.15; }
+[data-theme="light"] #loader { background: var(--bg); }
+[data-theme="light"] .stats-strip { background: var(--surface); }
+[data-theme="light"] .testi-section { background: var(--surface); }
+[data-theme="light"] .footer { background: var(--surface); }
+[data-theme="light"] .hero__blob--1 { background: radial-gradient(circle, rgba(91,82,240,0.14) 0%, transparent 70%); }
+[data-theme="light"] .hero__blob--2 { background: radial-gradient(circle, rgba(255,77,116,0.10) 0%, transparent 70%); }
+[data-theme="light"] .hero__blob--3 { background: radial-gradient(circle, rgba(0,184,148,0.08) 0%, transparent 70%); }
+
+/* ── Theme Toggle Button ── */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 24px;
+  border-radius: var(--r-full);
+  background: var(--surface-3);
+  border: 1.5px solid var(--border-2);
+  cursor: pointer;
+  position: relative;
+  transition: background 300ms ease, border-color 300ms ease;
+  flex-shrink: 0;
+}
+.theme-toggle:hover { border-color: var(--accent); }
+.theme-toggle__thumb {
+  position: absolute;
+  left: 3px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--text-muted);
+  transition: transform 300ms var(--spring), background 300ms ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  line-height: 1;
+}
+[data-theme="light"] .theme-toggle__thumb {
+  transform: translateX(18px);
+  background: var(--accent);
+}
+.theme-toggle__icon-dark  { display: block; }
+.theme-toggle__icon-light { display: none; }
+[data-theme="light"] .theme-toggle__icon-dark  { display: none; }
+[data-theme="light"] .theme-toggle__icon-light { display: block; }
+
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 html { scroll-behavior: smooth; font-size: 16px; -webkit-text-size-adjust: 100%; }
@@ -76,6 +152,7 @@ body {
   color: var(--text);
   line-height: 1.65;
   overflow-x: hidden;
+  transition: background 300ms ease, color 300ms ease;
 }
 
 ::-webkit-scrollbar { width: 5px; }
@@ -240,19 +317,112 @@ button { font-family: var(--body); cursor: pointer; border: none; background: no
 .nav__mobile {
   position: fixed;
   top: var(--nav-h); left: 0; right: 0;
-  background: rgba(8,8,16,0.97);
-  backdrop-filter: blur(24px);
-  padding: var(--sp6) var(--sp6) var(--sp8);
+  background: rgba(8,8,16,0.98);
+  backdrop-filter: blur(28px) saturate(180%);
+  -webkit-backdrop-filter: blur(28px) saturate(180%);
+  padding: var(--sp4) var(--sp5) var(--sp6);
   display: flex;
   flex-direction: column;
-  gap: var(--sp2);
+  gap: 2px;
   border-bottom: 1px solid var(--border);
   transform: translateY(-110%);
-  transition: transform 350ms var(--ease);
+  transition: transform 380ms var(--ease);
   z-index: 999;
 }
+[data-theme="light"] .nav__mobile {
+  background: rgba(240,237,255,0.98);
+}
 .nav__mobile.open { transform: translateY(0); }
-.nav__mobile .nav__link { font-size: var(--text-base); padding: var(--sp3) var(--sp4); }
+
+/* Mobile nav links with indicator */
+.mob-link {
+  display: flex;
+  align-items: center;
+  gap: var(--sp3);
+  padding: var(--sp3) var(--sp4);
+  font-size: var(--text-base);
+  font-weight: 500;
+  color: var(--text-muted);
+  border-radius: var(--r-md);
+  transition: all 220ms ease;
+  position: relative;
+}
+.mob-link::before {
+  content: '';
+  width: 3px; height: 0;
+  background: linear-gradient(180deg, var(--accent), var(--accent-2));
+  border-radius: 99px;
+  transition: height 220ms ease;
+  flex-shrink: 0;
+}
+.mob-link:hover, .mob-link.active {
+  color: var(--text);
+  background: var(--surface-2);
+}
+.mob-link:hover::before, .mob-link.active::before { height: 18px; }
+.mob-link.active { color: var(--accent); }
+
+/* Mobile bottom row */
+.mob-bottom {
+  display: flex;
+  align-items: center;
+  gap: var(--sp3);
+  margin-top: var(--sp4);
+  padding-top: var(--sp4);
+  border-top: 1px solid var(--border);
+}
+.mob-resume {
+  flex: 1;
+  justify-content: center;
+  border-radius: var(--r-md);
+}
+
+/* Mobile theme toggle button */
+.mob-theme-toggle {
+  display: flex;
+  align-items: center;
+  gap: var(--sp3);
+  padding: var(--sp3) var(--sp4);
+  background: var(--surface-2);
+  border: 1.5px solid var(--border-2);
+  border-radius: var(--r-md);
+  cursor: pointer;
+  transition: all 250ms ease;
+  color: var(--text-muted);
+  flex-shrink: 0;
+}
+.mob-theme-toggle:hover {
+  border-color: var(--accent);
+  color: var(--text);
+  background: var(--surface-3);
+}
+.mob-toggle-icon { font-size: 18px; line-height: 1; }
+.mob-toggle-text { font-size: var(--text-xs); font-weight: 600; letter-spacing: 0.04em; }
+.tgl-dark  { display: block; }
+.tgl-light { display: none; }
+[data-theme="light"] .tgl-dark  { display: none; }
+[data-theme="light"] .tgl-light { display: block; }
+
+/* Pill inside mob toggle */
+.mob-toggle-pill {
+  width: 32px; height: 18px;
+  background: var(--surface-3);
+  border: 1px solid var(--border-2);
+  border-radius: 99px;
+  position: relative;
+  margin-left: auto;
+  transition: background 300ms ease;
+}
+[data-theme="light"] .mob-toggle-pill { background: var(--accent); border-color: var(--accent); }
+.mob-toggle-thumb {
+  position: absolute;
+  top: 2px; left: 2px;
+  width: 12px; height: 12px;
+  border-radius: 50%;
+  background: var(--text-muted);
+  transition: transform 300ms var(--spring), background 300ms ease;
+}
+[data-theme="light"] .mob-toggle-thumb { transform: translateX(14px); background: #fff; }
 
 /* ═══════════════════════════════════════════════
    BUTTONS
@@ -1234,13 +1404,14 @@ button { font-family: var(--body); cursor: pointer; border: none; background: no
 }
 
 @media (max-width: 768px) {
-  .nav__menu, .nav__actions { display: none; }
+  .nav__menu { display: none; }
+  .nav__actions { display: none; }
   .nav__hamburger { display: flex; }
   .hero__grid { grid-template-columns: 1fr; text-align: center; gap: var(--sp10); padding: var(--sp12) 0; }
   .hero__visual { order: -1; }
   .hero__avatar-wrap, .hero__avatar { width: 220px; height: 220px; }
-  /* .hero__badge--1 { top: 0; } */
-  /* .hero__badge--2 { left: 0; } */
+  .hero__badge--1 { right: 0; }
+  .hero__badge--2 { left: 0; }
   .hero__actions, .hero__social { justify-content: center; }
   .hero__description { max-width: 100%; }
   .section__title { font-size: var(--text-3xl); }
@@ -1276,6 +1447,16 @@ button { font-family: var(--body); cursor: pointer; border: none; background: no
     transform: none !important;
   }
   .back-to-top { right: var(--sp4); bottom: var(--sp4); }
+}
+
+.mob-link:nth-child(1) { transition-delay: 0.05s; }
+.mob-link:nth-child(2) { transition-delay: 0.10s; }
+.mob-link:nth-child(3) { transition-delay: 0.15s; }
+.mob-link:nth-child(4) { transition-delay: 0.20s; }
+
+/* Upgraded body colors for deeper dark mode feel */
+[data-theme="dark"] .hero__bg-glow {
+  background: radial-gradient(ellipse 60% 60% at 60% 30%, rgba(123,114,255,0.12), transparent);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1316,6 +1497,12 @@ button { font-family: var(--body); cursor: pointer; border: none; background: no
         </ul>
 
         <div class="nav__actions">
+          <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode">
+            <span class="theme-toggle__thumb">
+              <span class="theme-toggle__icon-dark">🌙</span>
+              <span class="theme-toggle__icon-light">☀️</span>
+            </span>
+          </button>
           <a href="./images/aliyan'cv.pdf" target="_blank" class="btn btn--primary btn--sm">Resume ↗</a>
         </div>
 
@@ -1326,11 +1513,26 @@ button { font-family: var(--body); cursor: pointer; border: none; background: no
     </nav>
 
     <div class="nav__mobile" role="dialog" aria-label="Mobile navigation">
-      <a href="index.html"              class="nav__link">Home</a>
-      <a href="./pages/portfolioo.html" class="nav__link">Work</a>
-      <a href="./pages/about.html"      class="nav__link">About</a>
-      <a href="./pages/contact.html"    class="nav__link">Contact</a>
-      <a href="./images/aliyan'cv.pdf" target="_blank" class="btn btn--primary btn--sm" style="width:fit-content;margin-top:4px">Resume ↗</a>
+      <a href="index.html"              class="nav__link mob-link">Home</a>
+      <a href="./pages/portfolioo.html" class="nav__link mob-link">Work</a>
+      <a href="./pages/about.html"      class="nav__link mob-link">About</a>
+      <a href="./pages/contact.html"    class="nav__link mob-link">Contact</a>
+      <div class="mob-bottom">
+        <a href="./images/aliyan'cv.pdf" target="_blank" class="btn btn--primary mob-resume">Resume ↗</a>
+        <button class="mob-theme-toggle" id="themeToggleMob" aria-label="Toggle light/dark mode">
+          <span class="mob-toggle-icon">
+            <span class="tgl-dark">🌙</span>
+            <span class="tgl-light">☀️</span>
+          </span>
+          <span class="mob-toggle-text">
+            <span class="tgl-dark">Dark Mode</span>
+            <span class="tgl-light">Light Mode</span>
+          </span>
+          <span class="mob-toggle-pill">
+            <span class="mob-toggle-thumb"></span>
+          </span>
+        </button>
+      </div>
     </div>
   </header>
 
@@ -1383,19 +1585,19 @@ button { font-family: var(--body); cursor: pointer; border: none; background: no
               <img class="hero__avatar" src="./images/aliyan's.jpeg" alt="Aliyan Yousaf" />
 
               <!-- Floating badges -->
-              <!-- <div class="hero__badge hero__badge--1"> -->
-                <!-- <div class="badge__icon">⚡</div> -->
-                <!-- <div> -->
-                  <!-- <div class="badge__text">100+ Projects</div> -->
-                  <!-- <div class="badge__sub">Delivered on time</div> -->
-                <!-- </div> -->
-              <!-- </div> -->
-              <!-- <div class="hero__badge hero__badge--2"> -->
-                <!-- <div class="badge__icon">🛒</div> -->
-                <!-- <div> -->
-                  <!-- <div class="badge__text">Shopify Expert</div> -->
-                  <!-- <div class="badge__sub">3+ years exp.</div> -->
-                <!-- </div> -->
+              <div class="hero__badge hero__badge--1">
+                <div class="badge__icon">⚡</div>
+                <div>
+                  <div class="badge__text">100+ Projects</div>
+                  <div class="badge__sub">Delivered on time</div>
+                </div>
+              </div>
+              <div class="hero__badge hero__badge--2">
+                <div class="badge__icon">🛒</div>
+                <div>
+                  <div class="badge__text">Shopify Expert</div>
+                  <div class="badge__sub">3+ years exp.</div>
+                </div>
               </div>
             </div>
           </div>
@@ -1752,7 +1954,7 @@ button { font-family: var(--body); cursor: pointer; border: none; background: no
 
       <div class="footer__bottom">
         <p class="footer__copy">© 2026 Aliyan Yousaf. All rights reserved.</p>
-        <p class="footer__copy">Built by Aliyan</p>
+        <p class="footer__copy">Built with ❤️ by Aliyan</p>
       </div>
     </div>
   </footer>
@@ -1761,6 +1963,37 @@ button { font-family: var(--body); cursor: pointer; border: none; background: no
 
 <script>
 'use strict';
+
+/* ── Theme Toggle ── */
+(function() {
+  const saved = localStorage.getItem('aliyan-theme') || 'dark';
+  document.documentElement.setAttribute('data-theme', saved);
+})();
+
+function applyTheme(next) {
+  document.documentElement.setAttribute('data-theme', next);
+  localStorage.setItem('aliyan-theme', next);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  // Desktop toggle
+  const btn = document.getElementById('themeToggle');
+  if (btn) {
+    btn.addEventListener('click', () => {
+      const current = document.documentElement.getAttribute('data-theme') || 'dark';
+      applyTheme(current === 'dark' ? 'light' : 'dark');
+    });
+  }
+  // Mobile toggle
+  const btnMob = document.getElementById('themeToggleMob');
+  if (btnMob) {
+    btnMob.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const current = document.documentElement.getAttribute('data-theme') || 'dark';
+      applyTheme(current === 'dark' ? 'light' : 'dark');
+    });
+  }
+});
 
 /* ── Page Loader ── */
 window.addEventListener('load', () => {
@@ -1810,6 +2043,13 @@ onScroll();
 const hamburger = document.querySelector('.nav__hamburger');
 const mobileMenu = document.querySelector('.nav__mobile');
 if (hamburger && mobileMenu) {
+  function closeMobileMenu() {
+    mobileMenu.classList.remove('open');
+    hamburger.classList.remove('active');
+    hamburger.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  }
+
   hamburger.addEventListener('click', e => {
     e.stopPropagation();
     const isOpen = mobileMenu.classList.contains('open');
@@ -1818,15 +2058,21 @@ if (hamburger && mobileMenu) {
     hamburger.setAttribute('aria-expanded', !isOpen);
     document.body.style.overflow = isOpen ? '' : 'hidden';
   });
+
+  // Close on backdrop click
   document.addEventListener('click', () => {
-    if (mobileMenu.classList.contains('open')) {
-      mobileMenu.classList.remove('open');
-      hamburger.classList.remove('active');
-      hamburger.setAttribute('aria-expanded', 'false');
-      document.body.style.overflow = '';
-    }
+    if (mobileMenu.classList.contains('open')) closeMobileMenu();
   });
+
+  // Prevent menu closing when clicking inside
   mobileMenu.addEventListener('click', e => e.stopPropagation());
+
+  // Close menu when a nav link is tapped (mobile UX)
+  mobileMenu.querySelectorAll('.mob-link').forEach(link => {
+    link.addEventListener('click', () => {
+      setTimeout(closeMobileMenu, 120);
+    });
+  });
 }
 
 /* ── Typed Text ── */

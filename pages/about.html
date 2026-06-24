@@ -1,11 +1,120 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me</title>
     <link rel="stylesheet" href="../animation.css">
     <link rel="stylesheet" href="../style.css">
+  <!-- ══ THEME: instant apply (no flicker) ══ -->
+  <script>
+    (function(){
+      var t = localStorage.getItem('aliyan-theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+
+  <!-- ══ THEME CSS ══ -->
+  <style>
+    [data-theme="light"] {
+      --clr-bg:          #F0EDFF;
+      --clr-surface:     #FAFAFF;
+      --clr-surface-2:   #EDE9FF;
+      --clr-surface-3:   #E4DFFF;
+      --clr-border:      #D4CFEE;
+      --clr-border-2:    #C2BCEC;
+      --clr-accent:      #5B52F0;
+      --clr-accent-2:    #FF4D74;
+      --clr-accent-3:    #00B894;
+      --clr-accent-glow: rgba(91,82,240,0.18);
+      --clr-text:        #0F0D2A;
+      --clr-text-muted:  #4A4770;
+      --clr-text-faint:  #8E8BB0;
+      --shadow-sm:       0 1px 4px rgba(91,82,240,0.08);
+      --shadow-md:       0 4px 20px rgba(91,82,240,0.12);
+      --shadow-lg:       0 8px 40px rgba(91,82,240,0.15);
+    }
+    [data-theme="light"] body          { background: var(--clr-bg); color: var(--clr-text); }
+    [data-theme="light"] .nav          { background: rgba(240,237,255,0.92) !important; border-bottom-color: var(--clr-border) !important; }
+    [data-theme="light"] .nav.scrolled { background: rgba(240,237,255,0.98) !important; }
+    [data-theme="light"] .nav__mobile  { background: rgba(240,237,255,0.98) !important; }
+    [data-theme="light"] .footer       { background: var(--clr-surface) !important; }
+    [data-theme="light"] p             { color: var(--clr-text-muted); }
+    [data-theme="light"] h1,[data-theme="light"] h2,[data-theme="light"] h3 { color: var(--clr-text); }
+    [data-theme="light"] .card         { background: var(--clr-surface); border-color: var(--clr-border); }
+    [data-theme="light"] .section__label { color: var(--clr-accent); }
+    [data-theme="light"] .section__label::before { background: var(--clr-accent); }
+
+    /* Desktop toggle pill */
+    .theme-toggle {
+      display: flex; align-items: center;
+      width: 44px; height: 24px;
+      border-radius: 999px;
+      background: var(--clr-surface-2, #1e1e2a);
+      border: 1.5px solid var(--clr-border-2, #2e2e42);
+      cursor: pointer; position: relative; flex-shrink: 0;
+      transition: border-color 250ms ease, background 250ms ease;
+    }
+    .theme-toggle:hover { border-color: var(--clr-accent, #6C63FF); }
+    .theme-toggle__thumb {
+      position: absolute; left: 3px;
+      width: 16px; height: 16px; border-radius: 50%;
+      background: var(--clr-text-muted, #8888A0);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 10px;
+      transition: transform 300ms cubic-bezier(0.34,1.56,0.64,1), background 250ms ease;
+    }
+    [data-theme="light"] .theme-toggle__thumb {
+      transform: translateX(18px);
+      background: var(--clr-accent, #5B52F0);
+    }
+    .tgl-dark  { display: block; }
+    .tgl-light { display: none;  }
+    [data-theme="light"] .tgl-dark  { display: none;  }
+    [data-theme="light"] .tgl-light { display: block; }
+
+    /* Mobile toggle */
+    .mob-theme-toggle {
+      display: flex; align-items: center; gap: 10px;
+      padding: 10px 14px;
+      background: var(--clr-surface-2, #1e1e2a);
+      border: 1.5px solid var(--clr-border-2, #2e2e42);
+      border-radius: 12px; cursor: pointer;
+      color: var(--clr-text-muted, #8888A0);
+      font-family: inherit; width: 100%;
+      transition: border-color 220ms ease, background 220ms ease, color 220ms ease;
+    }
+    .mob-theme-toggle:hover {
+      border-color: var(--clr-accent, #6C63FF);
+      color: var(--clr-text, #F4F4FF);
+      background: var(--clr-surface-3, #252535);
+    }
+    .mob-toggle-icon { font-size: 18px; line-height: 1; }
+    .mob-toggle-text { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.05em; color: inherit; }
+    .mob-toggle-pill {
+      width: 32px; height: 18px;
+      background: var(--clr-surface-3, #252535);
+      border: 1px solid var(--clr-border-2, #2e2e42);
+      border-radius: 999px; position: relative; margin-left: auto; flex-shrink: 0;
+      transition: background 250ms ease;
+    }
+    [data-theme="light"] .mob-toggle-pill { background: var(--clr-accent,#5B52F0); border-color: var(--clr-accent,#5B52F0); }
+    .mob-toggle-thumb {
+      position: absolute; top: 2px; left: 2px;
+      width: 12px; height: 12px; border-radius: 50%;
+      background: var(--clr-text-muted, #8888A0);
+      transition: transform 300ms cubic-bezier(0.34,1.56,0.64,1), background 250ms ease;
+    }
+    [data-theme="light"] .mob-toggle-thumb { transform: translateX(14px); background: #fff; }
+
+    /* Mobile menu bottom row */
+    .mob-nav-bottom {
+      display: flex; align-items: center; gap: 10px;
+      margin-top: 14px; padding-top: 14px;
+      border-top: 1px solid var(--clr-border, #2A2A33);
+    }
+    .mob-nav-bottom .btn { flex: 1; justify-content: center; }
+  </style>
 </head>
 <body>
 
@@ -22,7 +131,13 @@
         </ul>
 
         <div class="nav__actions">
-       <a href="../images/aliyan'cv.pdf" target="_blank" class="btn btn--primary btn--sm">Resume</a>
+          <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
+            <span class="theme-toggle__thumb">
+              <span class="tgl-dark">🌙</span>
+              <span class="tgl-light">☀️</span>
+            </span>
+          </button>
+          <a href="../images/aliyan'cv.pdf" target="_blank" class="btn btn--primary btn--sm">Resume</a>
         </div>
 
         <button class="nav__hamburger" aria-label="Toggle menu" aria-expanded="false">
@@ -32,11 +147,18 @@
     </nav>
 
     <div class="nav__mobile" role="dialog" aria-label="Mobile navigation">
-      <a href="../index.html"        class="nav__link">Home</a>
-      <a href="portfolioo.html"    class="nav__link">Work</a>
-      <a href="about.html"        class="nav__link">About</a>
-      <a href="contact.html"      class="nav__link">Contact</a>
-      <a href="../images/aliyan'cv.pdf" target="_blank" class="btn btn--primary btn--sm" style="margin-top: 8px; width: fit-content;">Resume</a>
+      <a href="../index.html"  class="nav__link">Home</a>
+      <a href="portfolioo.html" class="nav__link">Work</a>
+      <a href="about.html"     class="nav__link active">About</a>
+      <a href="contact.html"   class="nav__link">Contact</a>
+      <div class="mob-nav-bottom">
+        <a href="../images/aliyan'cv.pdf" target="_blank" class="btn btn--primary btn--sm">Resume</a>
+        <button class="mob-theme-toggle" id="themeToggleMob" aria-label="Toggle dark/light mode">
+          <span class="mob-toggle-icon"><span class="tgl-dark">🌙</span><span class="tgl-light">☀️</span></span>
+          <span class="mob-toggle-text"><span class="tgl-dark">Dark Mode</span><span class="tgl-light">Light Mode</span></span>
+          <span class="mob-toggle-pill"><span class="mob-toggle-thumb"></span></span>
+        </button>
+      </div>
     </div>
   </header>
 
@@ -112,5 +234,134 @@
   </footer>
 
   <script src="../main.js"></script>
+<style>
+    /* ══ THEME TOGGLE ══ */
+[data-theme="light"] {
+  --bg:          #F0EDFF;
+  --surface:     #FAFAFF;
+  --surface-2:   #EDE9FF;
+  --surface-3:   #E4DFFF;
+  --border:      #D4CFEE;
+  --border-2:    #C2BCEC;
+  --accent:      #5B52F0;
+  --accent-2:    #FF4D74;
+  --accent-3:    #00B894;
+  --accent-glow: rgba(91,82,240,0.18);
+  --accent-glow2:rgba(91,82,240,0.06);
+  --text:        #000000;
+  --text-muted:  #4A4770;
+  --text-faint:  #8E8BB0;
+  --shadow-sm:   0 1px 4px rgba(91,82,240,0.08);
+  --shadow-md:   0 4px 20px rgba(91,82,240,0.12);
+  --shadow-lg:   0 8px 40px rgba(91,82,240,0.15);
+  --shadow-xl:   0 20px 60px rgba(91,82,240,0.18);
+  --glow:        0 0 40px rgba(91,82,240,0.2);
+}
+
+[data-theme="light"] body        { background: var(--bg); color: var(--text); }
+[data-theme="light"] .nav        { background: rgba(240,237,255,0.9); border-bottom-color: var(--border); }
+[data-theme="light"] .nav.scrolled { background: rgba(240,237,255,0.97); }
+
+/* Desktop toggle pill */
+.theme-toggle {
+  display: flex;
+  align-items: center;
+  width: 44px;
+  height: 24px;
+  border-radius: 999px;
+  background: var(--surface-3);
+  border: 1.5px solid var(--border-2);
+  cursor: pointer;
+  position: relative;
+  flex-shrink: 0;
+  transition: border-color 250ms ease, background 250ms ease;
+}
+.theme-toggle:hover { border-color: var(--accent); }
+.theme-toggle__thumb {
+  position: absolute;
+  left: 3px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  transition: transform 300ms cubic-bezier(0.34,1.56,0.64,1), background 250ms ease;
+}
+[data-theme="light"] .theme-toggle__thumb {
+  transform: translateX(18px);
+  background: var(--accent);
+}
+.tgl-dark  { display: block; }
+.tgl-light { display: none;  }
+[data-theme="light"] .tgl-dark  { display: none;  }
+[data-theme="light"] .tgl-light { display: block; }
+
+/* Mobile toggle button (inside mobile menu) */
+.mob-theme-toggle {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 14px;
+  background: var(--surface-2);
+  border: 1.5px solid var(--border-2);
+  border-radius: 12px;
+  cursor: pointer;
+  color: var(--text-muted);
+  font-family: inherit;
+  transition: border-color 220ms ease, background 220ms ease, color 220ms ease;
+  flex-shrink: 0;
+}
+.mob-theme-toggle:hover {
+  border-color: var(--accent);
+  color: var(--text);
+  background: var(--surface-3);
+}
+.mob-toggle-icon { font-size: 18px; line-height: 1; }
+.mob-toggle-text { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.04em; }
+.mob-toggle-pill {
+  width: 32px; height: 18px;
+  background: var(--surface-3);
+  border: 1px solid var(--border-2);
+  border-radius: 999px;
+  position: relative;
+  margin-left: auto;
+  transition: background 250ms ease;
+}
+[data-theme="light"] .mob-toggle-pill { background: var(--accent); border-color: var(--accent); }
+.mob-toggle-thumb {
+  position: absolute;
+  top: 2px; left: 2px;
+  width: 12px; height: 12px;
+  border-radius: 50%;
+  background: var(--text-muted);
+  transition: transform 300ms cubic-bezier(0.34,1.56,0.64,1), background 250ms ease;
+}
+[data-theme="light"] .mob-toggle-thumb { transform: translateX(14px); background: #fff; }
+  </style>
+  <!-- ══ THEME TOGGLE JS ══ -->
+  <script>
+    (function(){
+      function applyTheme(next){
+        document.documentElement.setAttribute('data-theme', next);
+        localStorage.setItem('aliyan-theme', next);
+      }
+      function initToggles(){
+        var d = document.getElementById('themeToggle');
+        if(d) d.addEventListener('click', function(){
+          applyTheme(document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark');
+        });
+        var m = document.getElementById('themeToggleMob');
+        if(m) m.addEventListener('click', function(e){
+          e.stopPropagation();
+          applyTheme(document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark');
+        });
+      }
+      if(document.readyState==='loading'){ document.addEventListener('DOMContentLoaded',initToggles); }
+      else{ initToggles(); }
+    })();
+  </script>
 </body>
 </html>
