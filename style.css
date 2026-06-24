@@ -710,6 +710,8 @@ input, textarea, select {
 .hero__bg {
   position: absolute;
   inset: 0;
+  height: 100%;
+  padding: 0%;
   pointer-events: none;
   overflow: hidden;
   z-index: -1;
@@ -741,7 +743,6 @@ input, textarea, select {
 /* ── 6. Stats strip ── */
 .stats-strip {
   margin-top: 0%;
-  padding: 0%;
   /* border-top: 1px solid var(--clr-border); */
   /* border-bottom: 1px solid var(--clr-border); */
   background: var(--clr-surface);
