@@ -609,10 +609,11 @@ button { font-family: var(--body); cursor: pointer; border: none; background: no
    HERO
 ═══════════════════════════════════════════════ */
 .hero {
-  min-height: 100vh;
+  min-height: auto !important;
+  height: auto !important;
   display: flex;
   align-items: center;
-  padding-top: var(--nav-h);
+  /* padding-top: var(--nav-h); */
   position: relative;
   overflow: hidden;
 }
@@ -692,7 +693,9 @@ button { font-family: var(--body); cursor: pointer; border: none; background: no
   grid-template-columns: 1fr 440px;
   gap: var(--sp16);
   align-items: center;
-  padding: var(--sp20) 0;
+  padding-top: 40px !important;
+  padding-bottom: 40px !important;
+  /* padding: var(--sp20) 0; */
 }
 
 /* Eyebrow badge */
@@ -1485,7 +1488,7 @@ button { font-family: var(--body); cursor: pointer; border: none; background: no
 ═══════════════════════════════════════════════ */
 @media (max-width: 1024px) {
   .hero__grid { grid-template-columns: 1fr 360px; gap: var(--sp10); }
-  .hero__avatar-wrap, .hero__avatar { width: 280px; height: 280px; }
+  /* .hero__avatar-wrap, .hero__avatar { width: 280px; height: 280px; } */
   .portfolio-grid { grid-template-columns: repeat(2, 1fr); }
   .footer__top { grid-template-columns: 1fr 1fr; gap: var(--sp8); }
   .stats-strip__inner { grid-template-columns: repeat(2, 1fr); }
