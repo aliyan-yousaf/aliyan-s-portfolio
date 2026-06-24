@@ -3,9 +3,82 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me</title>
+
+    <!-- ══ PRIMARY SEO ══ -->
+    <title>About Aliyan Yousaf | Frontend & Shopify Developer</title>
+    <meta name="description" content="Meet Aliyan Yousaf, a frontend and Shopify developer building modern, responsive websites and Shopify stores with HTML, CSS, JavaScript, and Liquid.">
+    <meta name="keywords" content="Aliyan Yousaf, about Shopify developer, frontend developer bio, Shopify expert Pakistan, web developer experience">
+    <meta name="author" content="Aliyan Yousaf">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <link rel="canonical" href="https://www.aliyanyousaf.com/pages/about.html">
+
+    <!-- ══ FAVICON ══ -->
+    <link rel="icon" type="image/png" href="../images/favicon.png">
+    <link rel="apple-touch-icon" href="../images/favicon.png">
+
+    <!-- ══ OPEN GRAPH ══ -->
+    <meta property="og:type" content="profile">
+    <meta property="og:site_name" content="Aliyan Yousaf — Portfolio">
+    <meta property="og:title" content="About Aliyan Yousaf | Frontend & Shopify Developer">
+    <meta property="og:description" content="Frontend and Shopify developer specializing in modern, responsive, and user-friendly websites and Shopify stores.">
+    <meta property="og:url" content="https://www.aliyanyousaf.com/pages/about.html">
+    <meta property="og:image" content="https://www.aliyanyousaf.com/images/aliyan's.jpeg">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="1200">
+    <meta property="og:image:alt" content="Aliyan Yousaf — Frontend & Shopify Developer">
+    <meta property="og:locale" content="en_US">
+
+    <!-- ══ TWITTER CARD ══ -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="About Aliyan Yousaf | Frontend & Shopify Developer">
+    <meta name="twitter:description" content="Frontend and Shopify developer specializing in modern, responsive, and user-friendly websites and Shopify stores.">
+    <meta name="twitter:image" content="https://www.aliyanyousaf.com/images/aliyan's.jpeg">
+    <meta name="twitter:image:alt" content="Aliyan Yousaf — Frontend & Shopify Developer">
+
+    <!-- ══ THEME COLOR ══ -->
+    <meta name="theme-color" content="#080810" media="(prefers-color-scheme: dark)">
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+
     <link rel="stylesheet" href="../animation.css">
     <link rel="stylesheet" href="../style.css">
+
+    <!-- ══ STRUCTURED DATA: Breadcrumb + Person ══ -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.aliyanyousaf.com/index.html" },
+            { "@type": "ListItem", "position": 2, "name": "About", "item": "https://www.aliyanyousaf.com/pages/about.html" }
+          ]
+        },
+        {
+          "@type": "Person",
+          "@id": "https://www.aliyanyousaf.com/#person",
+          "name": "Aliyan Yousaf",
+          "url": "https://www.aliyanyousaf.com/",
+          "image": "https://www.aliyanyousaf.com/images/aliyan's.jpeg",
+          "jobTitle": "Frontend & Shopify Developer",
+          "description": "Frontend and Shopify developer specializing in modern, responsive, and user-friendly websites and Shopify stores.",
+          "email": "mailto:yaliyan786@gmail.com",
+          "telephone": "+92-315-8759125",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Gujrat",
+            "addressCountry": "PK"
+          },
+          "sameAs": [
+            "https://github.com/aliyan-yousaf",
+            "https://www.linkedin.com/in/aliyan-yousaf",
+            "https://www.fiverr.com/sellers/aliyanyy77"
+          ]
+        }
+      ]
+    }
+    </script>
+
   <!-- ══ THEME: instant apply (no flicker) ══ -->
   <script>
     (function(){
@@ -126,7 +199,7 @@
         <ul class="nav__menu" role="list">
           <li><a href="../index.html"    class="nav__link">Home</a></li>
           <li><a href="portfolioo.html"  class="nav__link">Work</a></li>
-          <li><a href="about.html"       class="nav__link">About</a></li>
+          <li><a href="about.html"       class="nav__link active" aria-current="page">About</a></li>
           <li><a href="contact.html"     class="nav__link">Contact</a></li>
         </ul>
 
@@ -149,7 +222,7 @@
     <div class="nav__mobile" role="dialog" aria-label="Mobile navigation">
       <a href="../index.html"  class="nav__link">Home</a>
       <a href="portfolioo.html" class="nav__link">Work</a>
-      <a href="about.html"     class="nav__link active">About</a>
+      <a href="about.html"     class="nav__link active" aria-current="page">About</a>
       <a href="contact.html"   class="nav__link">Contact</a>
       <div class="mob-nav-bottom">
         <a href="../images/aliyan'cv.pdf" target="_blank" class="btn btn--primary btn--sm">Resume</a>
@@ -162,10 +235,11 @@
     </div>
   </header>
 
-    <section class="about">
+  <main id="main">
+    <section class="about" aria-labelledby="about-heading">
         <div class="content">
             <span>ABOUT ME</span>
-            <h1>Frontend & Shopify Developer</h1>
+            <h1 id="about-heading">Frontend & Shopify Developer</h1>
 
             <p>
                 Hi, I'm Aliyan, a passionate developer who enjoys creating modern,
@@ -183,6 +257,8 @@
             <a href="./contact.html" class="btn">Let's Work Together</a>
         </div>
     </section>
+  </main>
+
     <footer class="footer" role="contentinfo">
     <div class="container">
       <div class="footer__top">

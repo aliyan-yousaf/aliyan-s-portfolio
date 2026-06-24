@@ -3,8 +3,41 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Aliyan Yousaf — Portfolio. Shopify & Frontend Projects." />
-  <title>Portfolio — Aliyan Yousaf</title>
+
+  <!-- ══ PRIMARY SEO ══ -->
+  <title>Shopify & Web Development Portfolio — Aliyan Yousaf</title>
+  <meta name="description" content="Explore Aliyan Yousaf's portfolio of Shopify stores, dropshipping sites, and landing pages — including Brands Village, Teuto Trend, and Fetchy." />
+  <meta name="keywords" content="Shopify portfolio, Shopify developer projects, dropshipping store examples, e-commerce website design, landing page design, Aliyan Yousaf portfolio" />
+  <meta name="author" content="Aliyan Yousaf" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <link rel="canonical" href="https://www.aliyanyousaf.com/pages/portfolioo.html" />
+
+  <!-- ══ FAVICON ══ -->
+  <link rel="icon" type="image/png" href="../images/favicon.png" />
+  <link rel="apple-touch-icon" href="../images/favicon.png" />
+
+  <!-- ══ OPEN GRAPH ══ -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Aliyan Yousaf — Portfolio" />
+  <meta property="og:title" content="Shopify & Web Development Portfolio — Aliyan Yousaf" />
+  <meta property="og:description" content="A showcase of Shopify stores, dropshipping sites, and landing pages built with clean design, smooth functionality, and a focus on user experience." />
+  <meta property="og:url" content="https://www.aliyanyousaf.com/pages/portfolioo.html" />
+  <meta property="og:image" content="https://www.aliyanyousaf.com/images/work1.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="750" />
+  <meta property="og:image:alt" content="Aliyan Yousaf portfolio — Shopify store project showcase" />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- ══ TWITTER CARD ══ -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Shopify & Web Development Portfolio — Aliyan Yousaf" />
+  <meta name="twitter:description" content="A showcase of Shopify stores, dropshipping sites, and landing pages built with clean design, smooth functionality, and a focus on user experience." />
+  <meta name="twitter:image" content="https://www.aliyanyousaf.com/images/work1.png" />
+  <meta name="twitter:image:alt" content="Aliyan Yousaf portfolio — Shopify store project showcase" />
+
+  <!-- ══ THEME COLOR ══ -->
+  <meta name="theme-color" content="#080810" media="(prefers-color-scheme: dark)" />
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)" />
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -13,6 +46,37 @@
 
   <link rel="stylesheet" href="../style.css" />
   <link rel="stylesheet" href="../animation.css" />
+
+  <!-- ══ STRUCTURED DATA: Breadcrumb + ItemList of Projects ══ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.aliyanyousaf.com/index.html" },
+          { "@type": "ListItem", "position": 2, "name": "Portfolio", "item": "https://www.aliyanyousaf.com/pages/portfolioo.html" }
+        ]
+      },
+      {
+        "@type": "CollectionPage",
+        "name": "Aliyan Yousaf — Portfolio",
+        "url": "https://www.aliyanyousaf.com/pages/portfolioo.html",
+        "description": "A collection of Shopify and frontend web development projects by Aliyan Yousaf.",
+        "hasPart": [
+          { "@type": "CreativeWork", "name": "Brands Village", "about": "Shopify e-commerce store" },
+          { "@type": "CreativeWork", "name": "Teuto Trend", "about": "Shopify dropshipping store" },
+          { "@type": "CreativeWork", "name": "Fetchy", "about": "Shopify e-commerce store" },
+          { "@type": "CreativeWork", "name": "Amber Nook", "about": "Landing page" },
+          { "@type": "CreativeWork", "name": "Zen Mist", "about": "Shopify e-commerce store" },
+          { "@type": "CreativeWork", "name": "Men's Clothing Store", "about": "Shopify dropshipping store" }
+        ]
+      }
+    ]
+  }
+  </script>
+
   
   <!-- ══ THEME: instant apply (no flicker) ══ -->
   <script>
@@ -381,7 +445,7 @@
 
         <ul class="nav__menu" role="list">
           <li><a href="../index.html"    class="nav__link">Home</a></li>
-          <li><a href="./portfolioo.html" class="nav__link">Work</a></li>
+          <li><a href="./portfolioo.html" class="nav__link active" aria-current="page">Work</a></li>
           <li><a href="about.html"       class="nav__link">About</a></li>
           <li><a href="contact.html"     class="nav__link">Contact</a></li>
         </ul>
@@ -405,7 +469,7 @@
     <!-- Mobile menu -->
     <div class="nav__mobile" role="dialog" aria-label="Mobile navigation">
       <a href="../index.html"    class="nav__link">Home</a>
-      <a href="./portfolioo.html" class="nav__link active">Work</a>
+      <a href="./portfolioo.html" class="nav__link active" aria-current="page">Work</a>
       <a href="./about.html"     class="nav__link">About</a>
       <a href="./contact.html"   class="nav__link">Contact</a>
       <div class="mob-nav-bottom">
@@ -454,15 +518,15 @@
           <!-- Card 1 -->
           <article class="project-card" data-category="ecommerce">
             <div class="project-card__thumb">
-              <img src="../images/work1.png" alt="Brands Village" loading="lazy">
+              <img src="../images/work1.png" alt="Brands Village — Shopify e-commerce store homepage design" width="800" height="500" loading="lazy">
               <div class="project-card__overlay">
-                <a href="#" target="_blank" class="btn btn--primary btn--sm">Live Site</a>
+                <a href="#" target="_blank" rel="noopener" class="btn btn--primary btn--sm">Live Site</a>
               </div>
             </div>
             <div class="project-card__body">
               <div class="project-card__cat">E-Commerce</div>
               <h3 class="project-card__title">Brands Village</h3>
-              <p class="project-card__desc">BrandsVillage — ek modern Shopify store smooth shopping experience, clean design, aur easy product browsing ke saath.</p>
+              <p class="project-card__desc">Brands Village — a modern Shopify store built for a smooth shopping experience, clean design, and easy product browsing.</p>
               <div class="project-card__tags">
                 <span class="tag">HTML</span>
                 <span class="tag">CSS</span>
@@ -475,15 +539,15 @@
           <!-- Card 2 -->
           <article class="project-card" data-category="dropshipping">
             <div class="project-card__thumb">
-              <img src="../images/work2.jpeg" alt="Teuto Trend" loading="lazy">
+              <img src="../images/work2.jpeg" alt="Teuto Trend — Shopify dropshipping store storefront design" width="800" height="500" loading="lazy">
               <div class="project-card__overlay">
-                <a href="#" target="_blank" class="btn btn--primary btn--sm">Live Site</a>
+                <a href="#" target="_blank" rel="noopener" class="btn btn--primary btn--sm">Live Site</a>
               </div>
             </div>
             <div class="project-card__body">
               <div class="project-card__cat">Dropshipping Store</div>
               <h3 class="project-card__title">Teuto Trend</h3>
-              <p class="project-card__desc">Clean layout, smooth navigation aur seamless shopping experience ke saath ek modern Shopify dropshipping store.</p>
+              <p class="project-card__desc">A modern Shopify dropshipping store with a clean layout, smooth navigation, and a seamless shopping experience.</p>
               <div class="project-card__tags">
                 <span class="tag">HTML</span>
                 <span class="tag">CSS</span>
@@ -496,9 +560,9 @@
           <!-- Card 3 -->
           <article class="project-card" data-category="ecommerce">
             <div class="project-card__thumb">
-              <img src="../images/work3.jpeg" alt="Fetchy" loading="lazy">
+              <img src="../images/work3.jpeg" alt="Fetchy — responsive Shopify e-commerce store design" width="800" height="500" loading="lazy">
               <div class="project-card__overlay">
-                <a href="#" target="_blank" class="btn btn--primary btn--sm">Live Site</a>
+                <a href="#" target="_blank" rel="noopener" class="btn btn--primary btn--sm">Live Site</a>
               </div>
             </div>
             <div class="project-card__body">
@@ -517,9 +581,9 @@
           <!-- Card 4 — apna project add karo yahan -->
           <article class="project-card" data-category="landing">
             <div class="project-card__thumb">
-              <img src="../images/work4.png" alt="Project 4" loading="lazy">
+              <img src="../images/work4.png" alt="Amber Nook — landing page design showcase" width="800" height="500" loading="lazy">
               <div class="project-card__overlay">
-                <a href="#" target="_blank" class="btn btn--primary btn--sm">Live Site</a>
+                <a href="#" target="_blank" rel="noopener" class="btn btn--primary btn--sm">Live Site</a>
               </div>
             </div>
             <div class="project-card__body">
@@ -537,9 +601,9 @@
           <!-- Card 5 -->
           <article class="project-card" data-category="ecommerce">
             <div class="project-card__thumb">
-              <img src="../images/work5.png" alt="Project 5" loading="lazy">
+              <img src="../images/work5.png" alt="Zen Mist — single-product Shopify store design" width="800" height="500" loading="lazy">
               <div class="project-card__overlay">
-                <a href="#" target="_blank" class="btn btn--primary btn--sm">Live Site</a>
+                <a href="#" target="_blank" rel="noopener" class="btn btn--primary btn--sm">Live Site</a>
               </div>
             </div>
             <div class="project-card__body">
@@ -557,9 +621,9 @@
           <!-- Card 6 -->
           <article class="project-card" data-category="dropshipping">
             <div class="project-card__thumb">
-              <img src="../images/work6.png" alt="Project 6" loading="lazy">
+              <img src="../images/work6.png" alt="Men's clothing Shopify dropshipping store design" width="800" height="500" loading="lazy">
               <div class="project-card__overlay">
-                <a href="#" target="_blank" class="btn btn--primary btn--sm">Live Site</a>
+                <a href="#" target="_blank" rel="noopener" class="btn btn--primary btn--sm">Live Site</a>
               </div>
             </div>
             <div class="project-card__body">
