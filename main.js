@@ -1,5 +1,29 @@
 'use strict';
 
+/* Detect Chrome/Android "Desktop site" mode on a real phone.
+   In that mode the CSS viewport (window.innerWidth) is forced wide
+   (e.g. 980px+) while the actual device screen (screen.width, at
+   normal non-zoomed DPR) stays phone-sized. Neither width-based nor
+   pointer/hover-based media queries catch this reliably across
+   devices, so we detect it directly in JS and toggle a class on
+   <html> that style.css keys off of for the hero height and footer
+   stacking fixes. Runs immediately (not waiting for DOMContentLoaded)
+   so the class is set before the hero is painted. */
+(function detectDesktopSiteMode() {
+  function check() {
+    const cssWidth = window.innerWidth;
+    const physicalWidth = window.screen.width * (window.visualViewport ? 1 : 1);
+    // screen.width is in CSS px already on mobile browsers; when
+    // "Desktop site" forces a wider viewport than the device's own
+    // screen width, that's the signature of the mode.
+    const isDesktopSiteOnPhone = cssWidth > physicalWidth + 50 && physicalWidth > 0;
+    document.documentElement.classList.toggle('desktop-mode-fix', isDesktopSiteOnPhone);
+  }
+  check();
+  window.addEventListener('resize', check, { passive: true });
+  window.addEventListener('orientationchange', check);
+})();
+
 function ready(fn) {
   if (document.readyState !== 'loading') { fn(); }
   else { document.addEventListener('DOMContentLoaded', fn); }

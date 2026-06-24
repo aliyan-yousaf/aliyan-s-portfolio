@@ -2322,13 +2322,12 @@ input, textarea, select {
 }
 
 /* Guard against "Desktop Site" mode on phones: that mode forces a wide
-   viewport (e.g. 980px+), so width-based fixes below never trigger, and
-   100vh on a touch device's reported viewport still leaves extra empty
-   space top/bottom. Target actual touch devices instead of width. */
-@media (hover: none) and (pointer: coarse) {
-  .hero {
-    min-height: auto;
-  }
+   CSS viewport (e.g. 980px+) and reports pointer:fine / hover:hover,
+   so width- and pointer-based media queries never catch it. main.js
+   detects this directly (comparing screen width vs reported viewport
+   width) and adds .desktop-mode-fix to <html>; we key off that here. */
+html.desktop-mode-fix .hero {
+  min-height: auto;
 }
 
 .hero__grid {
@@ -3203,16 +3202,15 @@ input, textarea, select {
   border-top: 1px solid var(--clr-border);
 }
 
-/* Guard against "Desktop Site" mode on phones: the forced-wide viewport
-   skips the max-width:768px stacking rule below, so the two copyright
-   lines stay in a row and get squeezed on the real (narrow) screen.
-   Target actual touch devices instead of width. */
-@media (hover: none) and (pointer: coarse) {
-  .footer__bottom {
-    flex-direction: column;
-    gap: var(--space-2);
-    text-align: center;
-  }
+/* Guard against "Desktop Site" mode on phones: the forced-wide CSS
+   viewport skips the max-width:768px stacking rule below, and reports
+   pointer:fine, so a pointer-based media query doesn't catch it either.
+   main.js adds .desktop-mode-fix to <html> when it detects this; key
+   off that instead of width or pointer type. */
+html.desktop-mode-fix .footer__bottom {
+  flex-direction: column;
+  gap: var(--space-2);
+  text-align: center;
 }
 
 .footer__copy {
