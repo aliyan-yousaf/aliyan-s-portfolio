@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.aliyanyousaf.com/sitemap.xml
+Sitemap: https://aliyan-yousaf.github.io/sitemap.xml
